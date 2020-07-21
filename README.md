@@ -9,16 +9,22 @@ Basically the software packages comprises following general steps
 6)	Analysis of the mean curve derived by calculating the average over  individual synapses
 7)	Analysis of individual synapses
 8)	Data storage
+
 1	ANAYSIS FOR EXPERIMENTS WITH A DECREASING FLUORESCENCE AND UNDER THE APPLICATION OF AN INHIBITOR OF VESICULAR PROTON PUMP
 In this experimental design synaptic vesicles are rendered fluorescent due to their acidic milieu. In the case of vesicle release the change of pH changes depletes fluorescence signal. The inhibition of proton pump prevents reacidification and a recovery of the fluorescence signal. Depending on the stimulation the decay in the fluorescence signal is a measure for the size of a particular vesicle pool.
 Note: in our laboratory we usually use CypHer attached to and bafilomycin as an inhibitor for ATP-pump
+
 1.1	CY_PHER ANALYSIS: EXPERIMENTS WITH MULTIPLE STIMULATION
-A representative curve is shown in Fig.: 
+ 
 1.1.1	DATA PREPROCESSING
-Data segmentation
+Data segmentation according to Sbalzerini et al. (2005); Segmentation by detection of centroids representing local maxima that additionally exceed a defined threshold. Extema are detected by Dilation of the original image and subtracting dilation and original. Locations with zeros represent maxima.
+
 Background determination and Subtraction
+Background value was calcualted for each image. Gaussian filter was applied to get rid of noise,grey scale histogram was established and thresholded. Thus dark pixels were selected and exhibiting intensities were averaged. Thus obtained backgroundvalues were subtracted framewise.
+
 Bleaching Correction
 To correct the curves for bleaching two approaches are possible. First, a blank curve is recorded without any interventions and then used to calculate bleaching parameters. Second, an intrinsic bleaching curve is created from the raw experimental data. Therefore the algorithm detects the start and end positions of the signal according the procedure described in 1.1.2.
+
 Normalization
 1.1.2	DESCRIPTION OF THE BASIC ALGORITHM FOR DETERMINE ∆F
 The algorithm uses the 1° derivative and the 2nd derivative calculated from the mean fluorescence curve (averaged over all traces derived from ROIs) to recognize the stimulation time points and the end of corresponding fluorescence signals. Figuratively speaking the algorithm detects the edges of the ‘stairs’ in the curve. Thereby the 1°derivative can be used to get the points with the steepest decline in the curve indicating a rough position of a signal. Indicating the points with the ‘highest’ change in slope, the maxima in the 2°derivative give the edges. 
