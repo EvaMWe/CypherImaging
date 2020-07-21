@@ -1,7 +1,7 @@
 User Manuel: Package for analysis the release of synaptic vesicles.
-This is a bundle of software packages to analyse data derived from distinct experimental approaches to measure the size or fraction of synaptic vesicle pools. Thereby the blabla BEschreibung 
+This is a bundle of software packages to analyse data derived from distinct experimental approaches to measure the size or fraction of synaptic vesicle pools. T
 Basically the software packages comprises following general steps
-1)	Loading of data
+1)	Loading data
 2)	Image segmentation to select synapses as region of interest (ROI)
 3)	Calculation of raw fluorescence traces represented as the mean value from the intensity values within the individual ROIs
 4)	Background subtraction
